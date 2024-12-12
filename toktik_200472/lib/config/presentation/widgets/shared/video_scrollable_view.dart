@@ -5,6 +5,7 @@ import 'package:toktik_200472/domains/entities/video_post.dart';
 
 class VideoScrollableView extends StatelessWidget {
   final List<VideoPost> videos;
+
   const VideoScrollableView({super.key, required this.videos});
 
   @override
@@ -18,18 +19,20 @@ class VideoScrollableView extends StatelessWidget {
 
           return Stack(
             children: [
+              // Video player + gradiente
               SizedBox.expand(
-                child:FullscreenPlayer(
+                child: FullScreenPlayer(
                   caption: videoPost.caption,
                   videoUrl: videoPost.videoUrl,
-                )
-            ),
-
+                ),
+              ),
+              // Botones
               Positioned(
                 bottom: 40,
                 right: 20,
                 child: VideoButtons(video: videoPost)
-              ),
+              )
+              
             ],
           );
         });

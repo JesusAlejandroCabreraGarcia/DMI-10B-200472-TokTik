@@ -8,13 +8,12 @@ class DiscoverScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final discoverProvider = context.watch<DiscoverProvider>();
-
+    
     return Scaffold(
       body: discoverProvider.initialLoading
-        ? const Center(child: CircularProgressIndicator( strokeWidth: 2))
+        ? const Center(child: CircularProgressIndicator( strokeWidth: 2,))
         : VideoScrollableView(videos: discoverProvider.videos)
-    );
+      );
   }
 }
